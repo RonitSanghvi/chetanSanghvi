@@ -67,9 +67,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-/* globals.css or any other relevant CSS file */
-.bg-custom-image {
-  @apply bg-cover bg-center;
-  background-image: url('/homepage.jpeg');
-}
