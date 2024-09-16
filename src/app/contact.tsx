@@ -2,19 +2,19 @@ import React from 'react'
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 
 export default function Contact() {
   return (
-    <section className="bg-[#141414] py-12 md:py-16 lg:py-20 text-white">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Get in touch</h2>
-        <div className="flex flex-row">
-          <div className='flex-1'>
-            <form className="rounded-lg shadow-md p-6">
+    <section className="bg-[#141414] text-white py-10">
+      <div className="mx-auto flex flex-col space-y-2 w-4/5">
+        <h2 className="text-3xl md:text-5xl font-medium mx-auto">Get in Touch</h2>
+        
+        <div className="lg:flex lg:flex-row py-10 justify-around">
+          <div className=''>
+            <form className="rounded-lg">
               <div className="mb-4">
                 <label htmlFor="name" className="block text-xl font-medium mb-2">
-                    Name
+                  Your Full Name
                 </label>
                 <Input
                   type="text"
@@ -26,7 +26,7 @@ export default function Contact() {
               </div>
               <div className="mb-4">
                 <label htmlFor="email" className="block text-lg font-medium mb-2">
-                    Email
+                  Email
                 </label>
                 <Input
                   type="email"
@@ -38,7 +38,7 @@ export default function Contact() {
               </div>
               <div className="mb-4">
                 <label htmlFor="message" className="block text-lg font-medium mb-2">
-                    Message
+                  Message
                 </label>
                 <Textarea
                   id="message"
@@ -56,9 +56,9 @@ export default function Contact() {
             </form>
           </div>
 
-          <div className="border-2 border-r h-96 mx-6 border-white" />
+          <div className="hidden lg:block border-2 border-r h-96 mx-6 border-white" />
 
-          <div className="flex-1 space-y-6 self-center">
+          <div className="pt-10 lg:pt-0 space-y-6 self-center">
             <div className="flex items-center gap-4">
               <LocateIcon className="w-6 h-6" />
               <div>

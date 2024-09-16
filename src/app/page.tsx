@@ -10,24 +10,13 @@ import { MarqueeDemo } from "./slider"
 export default function Component() {
   return (
     <div className="flex flex-col min-h-[100dvh] bg-gray-900 text-white">
-
-      <section className="w-full h-screen bg-custom-image">
-
-        <div className="bg-black/70 h-screen bg-no-repeat bg-contain">
-        
-          <Header />
-          <HeroSection />
-          
-        </div>
-      </section>
-
+      <HeroSection />
       <About />
-      <MarqueeDemo />
+      {/* <MarqueeDemo /> */}
       <ServicesSection />
       <Achievements />
       <Contact />
       <Footer />
-
     </div>
   )
 }

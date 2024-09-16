@@ -1,10 +1,20 @@
 import Link from "next/link";
 import BlurFade from "@/components/magicui/blur-fade";
+import Header from "./header";
 
 export default function HeroSection() {
   return (
-    <section className="w-full h-screen bg-custom-image">
-      <div className="bg-black/70 h-screen bg-no-repeat bg-contain">
+    <section className="w-full h-screen">
+      <video
+        className="absolute inset- w-full h-full object-cover blur-md"
+        src="/video.mp4"
+        loop
+        autoPlay
+        muted
+        playsInline
+      />
+      <div className="bg-black/70 h-screen">
+        <Header />
         <BlurFade delay={1} duration={1} inView className="flex items-center h-full">
           <div className="space-y-4 lg:w-3/4 pl-8 md:pl-14 lg:pl-24">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">

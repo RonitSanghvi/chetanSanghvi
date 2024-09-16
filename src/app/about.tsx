@@ -52,8 +52,8 @@ export default function About() {
                 className="flex flex-col space-y-6 items-center w-full"
             >
                 <div className="mb-4">
-                    <p className="text-5xl tracking-widest font-semibold mb-2">SANGHVI INVESTMENT</p>
-                    <p className="text-2xl">
+                    <p className="text-xl lg:text-5xl tracking-widest font-semibold mb-2">SANGHVI INVESTMENT</p>
+                    <p className="text-md lg:text-2xl">
                     A Legacy of Securing Future
                     </p>
                 </div>

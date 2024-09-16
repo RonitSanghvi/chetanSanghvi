@@ -1,32 +1,58 @@
+"use client"
+import React, { useState } from 'react';
 import Link from "next/link";
 import BlurFade from "@/components/magicui/blur-fade";
 
 export default function Header() {
+  
+  const [showSidebar, setShowSidebar] = useState(false);
+  const toggleSidebar = () => {
+    setShowSidebar(!showSidebar);
+  };
+  
   return (
     <BlurFade
       delay={0}
       duration={0.7}
       inView
-      className="px-4 lg:px-6 h-16 flex items-center bg-gradient-to-b from-black/65 to-black/0 text-primary-foreground"
+      className="px-4 lg:px-6 h-16 flex items-center bg-gradient-to-b from-black/80 to-black/10 text-primary-foreground"
     >
-      <Link href="#" className="flex items-center justify-center" prefetch={false}>
-        {/* <BriefcaseIcon className="h-6 w-6" /> */}
-        <span className="sr-only">Experienced Financial Advisor</span>
-      </Link>
-      <nav className="mx-auto flex gap-4 sm:gap-10">
-        <Link href="#" className="text-sm lg:text-lg tracking-wider font-thin hover:underline underline-offset-4" prefetch={false}>
+      <div className="lg:hidden ml-auto">
+        <button onClick={toggleSidebar} className="block text-white focus:text-gray-200 focus:outline-none" aria-label="Toggle navigation">
+          <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path fillRule="evenodd" d="M4 6h16a1 1 0 010 2H4a1 1 0 110-2zm0 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 5h16a1 1 0 010 2H4a1 1 0 010-2z" clipRule="evenodd" />
+          </svg>
+        </button>
+      </div>
+
+      {showSidebar && <div className={`lg:hidden mt-16 fixed inset-y-0 right-0 w-full z-50 transform transition-transform ease-in-out ${showSidebar ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="h-full flex flex-col">
+          <text className='text-white font-semibold py-4 pl-3 text-xl'>
+            Main Menu
+          </text>
+          <div className='border border-white'></div>
+          <Link href="#home" className="text-lg text-white px-5 py-3">Home</Link>
+          <Link href="#about" className="text-lg text-white px-5 py-3">About</Link>
+          <Link href="#services" className="text-lg text-white px-5 py-3">Services</Link>
+          <Link href="#achievements" className="text-lg text-white px-5 py-3">Achievements</Link>
+          <Link href="#contact" className="text-lg text-white px-5 py-3">Contact</Link>
+        </div>
+      </div>}
+
+      <nav className="hidden mx-auto lg:flex gap-4 sm:gap-10 pt-4">
+        <Link href="#home" className="text-sm lg:text-lg tracking-wider font-thin hover:underline hover:font-medium underline-offset-4" prefetch={false}>
           Home
         </Link>
-        <Link href="#" className="text-sm lg:text-lg tracking-wider font-thin hover:underline underline-offset-4" prefetch={false}>
+        <Link href="#about" className="text-sm lg:text-lg tracking-wider font-thin hover:underline hover:font-medium underline-offset-4" prefetch={false}>
           About
         </Link>
-        <Link href="#" className="text-sm lg:text-lg tracking-wider font-thin hover:underline underline-offset-4" prefetch={false}>
+        <Link href="#services" className="text-sm lg:text-lg tracking-wider font-thin hover:underline hover:font-medium underline-offset-4" prefetch={false}>
           Services
         </Link>
-        <Link href="#" className="text-sm lg:text-lg tracking-wider font-thin hover:underline underline-offset-4" prefetch={false}>
+        <Link href="#achievements" className="text-sm lg:text-lg tracking-wider font-thin hover:underline hover:font-medium underline-offset-4" prefetch={false}>
           Achievements
         </Link>
-        <Link href="#" className="text-sm lg:text-lg tracking-wider font-thin hover:underline underline-offset-4" prefetch={false}>
+        <Link href="#contact" className="text-sm lg:text-lg tracking-wider font-thin hover:underline hover:font-medium underline-offset-4" prefetch={false}>
           Contact
         </Link>
       </nav>
