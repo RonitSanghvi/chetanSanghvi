@@ -12,7 +12,7 @@ export default function Component() {
     <div className="flex flex-col min-h-[100dvh] bg-gray-900 text-white">
       <HeroSection />
       <About />
-      {/* <MarqueeDemo /> */}
+      <MarqueeDemo />
       <ServicesSection />
       <Achievements />
       <Contact />

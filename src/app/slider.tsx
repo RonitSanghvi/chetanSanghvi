@@ -3,61 +3,48 @@ import Marquee from "@/components/magicui/marquee";
 
 const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://avatar.vercel.sh/jack",
-  },
-  {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://avatar.vercel.sh/jill",
+    name: "Initial Opening",
+    username: "2008",
+    img: "/memories/img-1.jpg",
   },
   {
     name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    username: "2016",
     img: "https://avatar.vercel.sh/john",
   },
   {
     name: "Jane",
-    username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jane",
+    username: "2018",
+    img: "/memories/img-3.JPG",
   },
   {
-    name: "Jenny",
-    username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jenny",
+    name: "Diwali",
+    username: "2024",
+    img: "/memories/img-4.jpg",
   },
   {
     name: "James",
     username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/james",
   },
 ];
 
-const firstRow = reviews.slice(0, reviews.length / 2);
+const firstRow = reviews.slice(0, reviews.length);
 const secondRow = reviews.slice(reviews.length / 2);
 
 const ReviewCard = ({
   img,
   name,
   username,
-  body,
 }: {
   img: string;
   name: string;
   username: string;
-  body: string;
 }) => {
   return (
     <figure
       className={cn(
-        "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+        "relative w-full cursor-pointer overflow-hidden rounded-xl border p-4",
         // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         // dark styles
@@ -65,7 +52,7 @@ const ReviewCard = ({
       )}
     >
       {/* <div className="flex flex-row items-center gap-2"> */}
-        <img className="w-80 h-40 rounded-md" width="1" height="1" alt="" src={img} />
+        <img className="w-80 h-52 rounded-md" width="1" height="1" alt="" src={img} />
         <div className="flex justify-between pt-2">
           <figcaption className="text-sm font-medium dark:text-white">
             {name}
